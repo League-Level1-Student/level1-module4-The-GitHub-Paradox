@@ -17,8 +17,8 @@ import javafx.event.Event;
 public class NastySuprise implements ActionListener {
 	JFrame f = new JFrame();
 	JPanel p = new JPanel();
-	Button b = new Button();
-	Button b1 = new Button();
+	Button b = new Button("Treat");
+	Button b1 = new Button("Trick");
 	private void showPictureFromTheInternet(String imageUrl) {
 	    try {
 	        URL url = new URL(imageUrl);
@@ -40,11 +40,17 @@ public class NastySuprise implements ActionListener {
 		p.add(b1);
 		b.addActionListener(this);
 		b1.addActionListener(this);
+		f.setVisible(true);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		if(arg0.getSource() == b) {
+			showPictureFromTheInternet("https://media.tenor.com/images/b9ed400ef0d59e41b14adce859ad2994/tenor.png");
+		}
+		if(arg0.getSource() == b1) {
+			showPictureFromTheInternet("https://giphy.com/gifs/dog-angry-doge-10ECejNtM1GyRy");
+		}
 		
 	}
 }
