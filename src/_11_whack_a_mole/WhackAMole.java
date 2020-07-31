@@ -11,14 +11,7 @@ import javax.swing.JPanel;
 
 public class WhackAMole {
 	public static void main(String[] args) {
-		JFrame f = new JFrame();
-		JPanel p = new JPanel();
-		f.add(p);
-		f.setSize(250, 500);
-		for(int i = 0; i < 24; i++) {
-			Button ran = new Button();
-			p.add(ran);
-		}
+
 	}
 	static void speak(String words) {
         if( System.getProperty( "os.name" ).contains( "Windows" ) ) {
@@ -48,3 +41,4 @@ public class WhackAMole {
 	    sound.play();
 	}
 }
+
