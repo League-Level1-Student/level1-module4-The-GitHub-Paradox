@@ -62,31 +62,11 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
    		 AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
    		 // 10. Play the sound
-   		 playSound(sound);
    		 // 11. Use the pause() method below to wait until your music has finished
    		 // 12. Insert your completed Magic 8 ball code here
 
    	 }
-
     }
-
-    public static synchronized void playSound(final AudioClip sound) {
-    	  new Thread(new Runnable() {
-    	  // The wrapper thread is unnecessary, unless it blocks on the
-    	  // Clip finishing; see comments.
-    	    public void run() {
-    	      try {
-    	        Clip clip = AudioSystem.getClip();
-    	        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-    	          Main.class.getResourceAsStream("/path/to/sounds/" + sound));
-    	        clip.open(inputStream);
-    	        clip.start(); 
-    	      } catch (Exception e) {
-    	        System.err.println(e.getMessage());
-    	      }
-    	    }
-    	  }).start();
-    	}
 
 
 
